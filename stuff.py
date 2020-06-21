@@ -3,3 +3,6 @@ def do_stuff(x):
 
 def show_me_X():
     return 'X'
+
+def hello():
+    return 'world'
