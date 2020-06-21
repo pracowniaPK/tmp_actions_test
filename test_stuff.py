@@ -1,3 +1,5 @@
+import os
+
 from stuff import do_stuff, show_me_X, hello
 
 def test_do_stuff():
@@ -9,3 +11,6 @@ def test_show_me():
 
 def test_hello():
     assert hello() == 'hello'
+
+def test_secret():
+    assert 'nie dla psa' == os.environ['STUFF']
