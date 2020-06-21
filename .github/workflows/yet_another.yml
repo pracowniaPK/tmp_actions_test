@@ -8,6 +8,7 @@ on:
 
 jobs:
   build:
+    name: testy
 
     runs-on: ubuntu-latest
 
@@ -39,3 +40,29 @@ jobs:
     - name: You asked for it
       run: |
         echo dupa
+
+  build2:
+    name: gupoty
+
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v2
+    - name: Set up Python ${{ matrix.python-version }}
+      uses: actions/setup-python@v2
+      with:
+        python-version: ${{ matrix.python-version }}
+    - name: Install dependencies
+      run: |
+        python -m pip install --upgrade pip
+        pip install flake8 pytest
+        if [ -f requirements.txt ]; then pip install -r requirements.txt; fi
+    - name: Odpalanie rzeczy
+      env:
+        STUFF: ${{ secrets.STUFFF }}
+      run: |
+        python stuff.py
+    
+
+
+
