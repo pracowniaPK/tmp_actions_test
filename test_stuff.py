@@ -1,4 +1,4 @@
-from stuff import do_stuff, show_me_X
+from stuff import do_stuff, show_me_X, hello
 
 def test_do_stuff():
     assert do_stuff(0) == 0
@@ -6,3 +6,6 @@ def test_do_stuff():
 
 def test_show_me():
     assert show_me_X() == "X"
+
+def test_hello():
+    assert hello() == 'hello'
